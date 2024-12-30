@@ -1,15 +1,15 @@
 import { model, Schema } from "mongoose";
-import { Student } from "../../interfaces/Student";
+import { Account } from "../../interfaces/Account";
 
-export const studentsSchemas = new Schema<Student>({
-    userName:{ type: String, required: true },
-    sid:{ type: String, required: true },
-    name:{ type: String, required: true },
-    department:{ type: String, required: true },
-    grade:{ type: String, required: true },
-    class:{ type: String, required: true },
-    Email:{ type: String, required: true },
-    absences:{ type: Number, required: false },
+export const accountSchema = new Schema<Account>({
+    year: { type: Number, required: true },
+    month: { type: Number, required: true },
+    day: { type: Number, required: true },
+    hour: { type: Number, required: true },
+    state: { type: Number, required: true },
+    balance: { type: Number, required: true },
+    category: { type: String, required: true },
+    note: { type: String, required: true }
 });
 
-export const studentsModel = model<Student>('studentslists', studentsSchemas);
+export const accountModel = model<Account>('account', accountSchema);
