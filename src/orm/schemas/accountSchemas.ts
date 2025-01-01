@@ -1,7 +1,8 @@
 import { model, Schema } from "mongoose";
 import { Account } from "../../interfaces/Account";
 
-export const accountSchema = new Schema<Account>({
+export const accountSchemas = new Schema<Account>({
+    id: { type: Number, required: true , unique: true },
     year: { type: Number, required: true },
     month: { type: Number, required: true },
     day: { type: Number, required: true },
@@ -12,4 +13,4 @@ export const accountSchema = new Schema<Account>({
     note: { type: String, required: true }
 });
 
-export const accountModel = model<Account>('account', accountSchema);
+export const accountModel = model<Account>('account', accountSchemas);
