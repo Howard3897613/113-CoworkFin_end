@@ -1,14 +1,10 @@
-# StudentHub 專案
+# 第八組 帳本
 這是一個基於MVC架構、前後端分離的專案。具備完整 CRUD 功能的全端應用程式，整合前端與後端，並串接資料庫進行資料操作。
-
-前端網址：https://github.com/Howard3897613/CRUD411630519-front
-
-後端網址：https://github.com/Howard3897613/CRUD411630519-end
 
 ### 功能
 * Create: 新增資料 insertOne
-* Read: 查詢資料 findAll
-* Update: 更新資料 updateNameById
+* Read: 查詢資料 getAllAccounts
+* Update: 更新資料 updateBalanceById
 * Delete: 刪除資料 deleteById
 
 ### 安裝與執行指引
@@ -19,138 +15,21 @@
 * API測試 : PostMan
 * 安裝套件 : npm
 
-#### 瀏覽應用
-執行npm run dev後，Ctrl+左鍵點擊 http://localhost:5173 來使用應用。
 
 ### API 規格說明
 #### API 基本資訊
 * Base URL : /api/v1/user/
 * 格式 : JSON
-#### 查詢學生資料(Read)
-* GET 方法
-* 描述 : 根據學生的缺席次數、姓名或座號查詢資料。
-
-#### 新增學生資料(Create)
-* POST
-
-Body :
-```typescript
-{
-    "userName": "tkuim0425",
-    "name": "王大明",
-    "sid": "51",
-    "department": "資訊管理學系",
-    "grade": "3",
-    "class": "C",
-    "Email": "411630519@o365.tku.edu.tw"
-}
-```
-
-(回應)
-* 成功 : 
-```typescript
-{
-    "code": 200,
-    "message": "",
-    "body": {
-        "userName": "tkuim0425",
-        "name": "王大明",
-        "sid": "51",
-        "department": "資訊管理學系",
-        "grade": "3",
-        "class": "C",
-        "Email": "411630519@o365.tku.edu.tw"
-        "_id": "6759b6c52927e07a0ddeb599",
-        "__v": 0
-    }
-}
-```
-
-* 失敗 : 
-```typescript
-{
-  "code": 403,
-  "message": "student list is full"
-}
-```
-* 或是 : 
-```typescript
-{
-  "code": 500,
-  "message": "server error"
-}
-```
-#### 刪除學生資料(Delete)
-* DELETE
-
-Body :
-```typescript
-{
-  "userName": "tkuim0425"
-}
-```
-
-(回應)
-* 成功 : 
-```typescript
-{
-  "code": 200,
-  "message": "success",
-  "body": {
-    "userName": "tkuim0425"
-  }
-}
-```
-
-* 失敗 : 
-```typescript
-{
-  "code": 500,
-  "message": ""
-}
-```
-
-#### 更新學生資料(Update)
-* PUT
-
-Body :
-```typescript
-{
-  "userName": "tkuim0425",
-  "name": "陳庭浩"
-}
-```
-
-(回應)
-* 成功 : 
-```typescript
-{
-  "code": 200,
-  "message": "update success",
-  "body": {
-    "userName": "tkuim0425",
-    "name": "陳庭浩"
-  }
-}
-```
-
-* 失敗 : 
-```typescript
-{
-  "code": 404,
-  "message": "user not found"
-}
-```
 
 ### 架構圖 : 展示前端、後端、資料庫及其互動
 ![架構圖](pic.png)
 
 ### 流程圖：描述 CRUD 功能的操作流程。
 
-* 查詢學生: GET=> /api/v1/user/findAll
-* 新增學生: POST=> /api/v1/user/insertOne
-* 刪除學生: DELETE=> /api/v1/user/deleteById
-* 更新學生: PUT=> /api/v1/user/updateNameById
+* 查詢所有帳戶: GET=> /api/v1/user/getAllAccounts
+* 插入帳戶: POST=> /api/v1/user/insertOne
+* 刪除帳戶: DELETE=> /api/v1/user/deleteById
+* 更新帳戶餘額: PUT=> /api/v1/user/updateBalanceById
 
 #### 流程解說
 
