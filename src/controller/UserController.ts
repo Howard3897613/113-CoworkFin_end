@@ -51,9 +51,9 @@ export class UserController extends Contorller {
         Response.status(resp.code).send(resp);
     }
     
-    public async updateNameById(Request: Request, Response: Response) {
+    public async updateBalanceById(Request: Request, Response: Response) {
     
-        const resp = await this.service.updateNameById(Request.query.id as string,Request.query.id as string);
+        const resp = await this.service.updateBalanceById(Request.query.id as string,Request.query.id as string);
         Response.status(resp.code).send(resp);
     }    
 }

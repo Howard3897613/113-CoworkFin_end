@@ -38,7 +38,7 @@ export class UserRoute extends Route{
             this.Contorller.deleteById(req, res);
         })
         this.router.put(`${this.url}updateNameById`, (req, res) => {
-            this.Contorller.updateNameById(req, res);
+            this.Contorller.updateBalanceById(req, res);
         });
     }
 }
